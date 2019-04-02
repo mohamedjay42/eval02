@@ -1,5 +1,6 @@
 <?php
-
+require('model_array.php');
+require('view.php');
 $aData = [
     ['prenom' => 'Louise',  'note' => 16],
     ['prenom' => 'Emma',    'note' => 18],
@@ -30,6 +31,31 @@ if ( ($nNumExercice>0) && ($nNumExercice<=10) ) {
     die("exercice $nNumExercice inexistant");
 }
 
+function exercice01() {
+  global $aData;
+  ajouterEleve(['Marie',15]);
+  print_r($aData);
+}
+function exercice02() {
+  global $aData;
+  lireNote('Emma');
+
+}
+function exercice03() {
+  global $aData;
+  supprimerEleve('Gabriel');
+  print_r($aData);
+}
+function exercice04() {
+  global $aData;
+  modifierNote('Manon',15);
+  print_r($aData);
+}
+function exercice05() {
+  global $aData;
+  creerCsv();
+  print_r($aData);
+}
 /*
 Consignes habituelles (git, coding standards...)
 soignez l'organisation du programme: utilisez des fonctions, séparez votre code en plusieurs fichiers
